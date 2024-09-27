@@ -86,8 +86,17 @@ func drawNote(x int, y int, drawLetter bool) int {
 		guitarString += "|---"
 		fretboard += guitarString + "\n"
 	}
-	fretboard += `
-                     3       5       7       9          12`
+	if fretLength >= 12 {
+		fretboard += `                     3       5       7       9          12`
+	} else if fretLength >= 9 {
+		fretboard += `                     3       5       7       9`
+	} else if fretLength >= 7 {
+		fretboard += `                     3       5       7`
+	} else if fretLength >= 5 {
+		fretboard += `                     3       5`
+	} else if fretLength >= 3 {
+		fretboard += `                     3`
+	}
 	fmt.Println(fretboard + "")
 	fmt.Println(statusMessage)
 	return drawnNote
