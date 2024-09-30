@@ -87,7 +87,7 @@ func drawNote(x int, y int, drawLetter bool) int {
 		fretboard += guitarString + "\n"
 	}
 	if fretLength >= 12 {
-		fretboard += `                     3       5       7       9          12`
+		fretboard += `                     3       5       7       9           12`
 	} else if fretLength >= 9 {
 		fretboard += `                     3       5       7       9`
 	} else if fretLength >= 7 {
